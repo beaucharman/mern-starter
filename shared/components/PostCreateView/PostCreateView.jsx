@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars*/
-/* eslint-disable prefer-template*/
 import React, { Component, PropTypes } from 'react';
 
 class PostCreateView extends Component {
@@ -19,7 +17,7 @@ class PostCreateView extends Component {
   }
 
   render() {
-    const cls = 'form ' + (this.props.showAddPost ? 'appear' : '');
+    const cls = `form ${(this.props.showAddPost ? 'appear' : '')}`;
     return (
       <div className={cls}>
         <div className="form-content">
@@ -29,7 +27,8 @@ class PostCreateView extends Component {
           <textarea placeholder="Post Content" className="form-field" ref="content"></textarea>
           <a className="post-submit-button align-right" href="#" onClick={this.addPost}>Submit</a>
         </div>
-      </div>);
+      </div>
+    );
   }
 }
 

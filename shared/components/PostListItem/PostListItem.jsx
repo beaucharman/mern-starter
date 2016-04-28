@@ -1,22 +1,20 @@
-/* eslint no-unused-vars: 0 */
-/* eslint-disable prefer-template*/
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
-function PostListItem(props, context) {
+function PostListItem(props) {
   return (
-     <div className="single-post">
-        <h3 className="post-title ">
-          <Link to={'/post/' + props.post.slug + '-' + props.post.cuid} onClick={props.onClick}>
-            {props.post.title}
-          </Link>
-        </h3>
+    <div className="single-post">
+      <h3 className="post-title ">
+        <Link to={`/post/${props.post.slug}-${props.post.cuid}`} onClick={props.onClick}>
+          {props.post.title}
+        </Link>
+      </h3>
       <p className="author-name">By {props.post.name}</p>
       <p className="post-desc">{props.post.content}</p>
       <p className="post-action"><a href="#" onClick={props.onDelete}>Delete Post</a></p>
       <hr className="divider"/>
-     </div>
-   );
+    </div>
+  );
 }
 
 PostListItem.propTypes = {
